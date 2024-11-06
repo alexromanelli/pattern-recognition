@@ -1,0 +1,2 @@
+# exclui os dados de placas da UFPR, que são muito grandes para transferir ao GitHub
+/reconhecimento_placa_veicular/data/
