@@ -46,14 +46,14 @@ def criarMatrizes(proposito: str) -> tuple[np.ndarray, np.ndarray]:
         files = [f for f in listdir(mypath2) if isfile(join(mypath2, f))]
         files.sort()
         for file in files:
-            if file == 'track0114[01].png':
-                print(file)
             if file.endswith(".png"):
                 image = Image.open(join(mypath2, file))
                 numpydata = np.array(image)
                 if numpydata.shape != (1080, 1920, 3):
                     print(file)
                     exit(0)
+                img = Image.fromarray(numpydata)
+                img.save(join(mypath2, 'teste.png'), 'png')
                 # print(numpydata.shape)
                 if X_data.size == 0:
                     X_data = np.array([numpydata])
