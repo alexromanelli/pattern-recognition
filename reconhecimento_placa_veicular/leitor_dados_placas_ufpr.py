@@ -52,8 +52,8 @@ def criarMatrizes(proposito: str) -> tuple[np.ndarray, np.ndarray]:
                 if numpydata.shape != (1080, 1920, 3):
                     print(file)
                     exit(0)
-                img = Image.fromarray(numpydata)
-                img.save(join(mypath2, 'teste.png'), 'png')
+                # img = Image.fromarray(numpydata)
+                # img.save(join(mypath2, 'teste.png'), 'png')
                 # print(numpydata.shape)
                 if X_data.size == 0:
                     X_data = np.array([numpydata])
@@ -75,16 +75,16 @@ def criarMatrizes(proposito: str) -> tuple[np.ndarray, np.ndarray]:
                 corner_y4 = plate_corners[3][1]
                 if Y_data.size == 0:
                     Y_data = np.array([[corner_x1, corner_y1, 
-                                            corner_x2, corner_y2, 
-                                            corner_x3, corner_y3, 
-                                            corner_x4, corner_y4]])
+                                        corner_x2, corner_y2, 
+                                        corner_x3, corner_y3, 
+                                        corner_x4, corner_y4]])
                 else:
                     Y_data = np.append(Y_data, 
-                                    np.array([[corner_x1, corner_y1, 
-                                                corner_x2, corner_y2, 
-                                                corner_x3, corner_y3, 
-                                                corner_x4, corner_y4]]),
-                                    axis=0)
+                                        np.array([[corner_x1, corner_y1, 
+                                                   corner_x2, corner_y2, 
+                                                   corner_x3, corner_y3, 
+                                                   corner_x4, corner_y4]]),
+                                        axis=0)
                 j += 1
                 # print(j)
                 # print(Y_data.shape)
