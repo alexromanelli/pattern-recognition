@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split, StratifiedKFold
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report, accuracy_score, f1_score
 
-from keras_models import Sequential
+from tensorflow.python.keras.models import Sequential
 from tensorflow.python.keras.layers import Dense, Dropout, Flatten, Activation
 from tensorflow.python.keras.layers import Conv1D, MaxPooling1D
 #from keras.layers import Conv2D, MaxPooling2D
@@ -139,7 +139,7 @@ def _buildmodel(d, chan, numclasses, kernel_size, filters ):
     print(model.summary())
     #config = model.get_config()
     #print config
-    from keras.utils.vis_utils import plot_model
+    from tensorflow.python.keras.utils.vis_utils import plot_model
     modelfilename = 'CNN.png'
     print('Dumping model to ', modelfilename)
     plot_model(model, to_file=modelfilename, show_shapes=True)
